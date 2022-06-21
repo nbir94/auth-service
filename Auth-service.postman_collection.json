@@ -1,0 +1,80 @@
+{
+	"info": {
+		"_postman_id": "373fb82a-a2ca-4bf5-b823-1a62845afd13",
+		"name": "Auth-service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get token",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "any-app",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "Qwerty123",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8091/auth/token",
+					"host": [
+						"localhost"
+					],
+					"port": "8091",
+					"path": [
+						"auth",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "publish data",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJhdXRoLWFwcCIsInN1YiI6ImFueS1hcHAiLCJpYXQiOjE2NTU4MDg3NjgsImV4cCI6MTY1NTgwODgyOH0.5gAgsdml6Prpv1hvfLS7gdWxNuMZzijQqw1_lNVq44Zk5TggAWndZYSJfkE3IBfcQmNRvNcddwD6DtDsKUGMnQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"timestamp\": \"2022-06-21T09:47:12.884+00:00\",\r\n    \"message\": \"hoba\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8091/publish",
+					"host": [
+						"localhost"
+					],
+					"port": "8091",
+					"path": [
+						"publish"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
