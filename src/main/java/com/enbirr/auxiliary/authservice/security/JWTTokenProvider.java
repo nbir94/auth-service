@@ -49,7 +49,7 @@ public class JWTTokenProvider {
 
     AuthServiceResponseDto result = new AuthServiceResponseDto();
     result.setType("Bearer");
-    result.setValue("Bearer " + token);
+    result.setValue(token);
     result.setExpiry(expiration.getTime());
     return result;
   }
